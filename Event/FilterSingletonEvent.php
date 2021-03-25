@@ -2,7 +2,7 @@
 
 namespace Umanit\DoctrineSingletonBundle\Event;
 
-use Symfony\Component\EventDispatcher\Event;
+use Symfony\Contracts\EventDispatcher\Event;
 use Umanit\DoctrineSingletonBundle\Model\SingletonInterface;
 
 /**

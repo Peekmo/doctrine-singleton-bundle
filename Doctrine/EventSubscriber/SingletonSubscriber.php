@@ -54,7 +54,7 @@ class SingletonSubscriber implements Common\EventSubscriber
 
             // Event to add filters
             $event = new FilterSingletonEvent($entity, $filters);
-            $this->eventDispatcher->dispatch(FilterSingletonEvent::SINGLETON_FILTER_EVENT, $event);
+            $this->eventDispatcher->dispatch($event, FilterSingletonEvent::SINGLETON_FILTER_EVENT);
 
             $filters = $event->getFilters();
 

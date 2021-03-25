@@ -16,7 +16,7 @@ class SingletonAdminExtension extends AbstractAdminExtension
     /**
      * {@inheritdoc}
      */
-    public function configureActionButtons(AdminInterface $admin, $list, $action, $object)
+    public function configureActionButtons(AdminInterface $admin, array $list, string $action, ?object $object = null): array
     {
         // No create action on edit object
         if ($object && isset($list['create'])) {

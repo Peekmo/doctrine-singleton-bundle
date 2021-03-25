@@ -11,4 +11,11 @@ services:
         tags:
             - { name: sonata.admin.extension }
 
+    umanit_doctrine_singleton.controller.singleton_crudcontroller:
+        class: Umanit\DoctrineSingletonBundle\Controller\Sonata\SingletonCRUDController
+        calls:
+            - [setContainer, ['@service_container']]
+        tags:
+            - { name: controller.service_arguments }
+
 

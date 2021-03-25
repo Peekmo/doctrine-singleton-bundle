@@ -7,7 +7,7 @@ use Umanit\DoctrineSingletonBundle\Helper\SingletonHelper;
 /**
  * Twig helpers
  */
-class SingletonExtension extends \Twig_Extension
+class SingletonExtension  extends \Twig\Extension\AbstractExtension
 {
     /**
      * @var SingletonHelper
@@ -28,7 +28,7 @@ class SingletonExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            new \Twig_Function('get_singleton', [$this->singletonHelper, 'getSingleton']),
+            new \Twig\TwigFunction('get_singleton', [$this->singletonHelper, 'getSingleton']),
         );
     }
 }

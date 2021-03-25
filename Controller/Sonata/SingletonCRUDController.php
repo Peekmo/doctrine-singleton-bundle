@@ -4,6 +4,8 @@ namespace Umanit\DoctrineSingletonBundle\Controller\Sonata;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Sonata\AdminBundle\Controller\CRUDController;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Umanit\MultiSiteBundle\Utils\SiteAccessesManager;
 
 /**
@@ -14,7 +16,7 @@ class SingletonCRUDController extends CRUDController
     /**
      * {@inheritdoc}
      */
-    public function listAction()
+    public function listAction(Request $request): Response
     {
         $result = $this->admin->getDatagrid()->getResults();
         if (count($result) > 1) {
